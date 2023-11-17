@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="assets/img/oks.png" type="image/png">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- En el head de tu HTML -->
+
+
+
+    <title>FUNDAMENTOS DEL ARTE ESTILIZADO</title>
+    <style>
+        /* Estilos para el título "FUNDAMENTOS DEL ARTE ESTILIZADO" */
+        .fundamentos-title {
+            text-align: center;
+            font-weight: bold;
+            padding-top: 5%;
+            padding-bottom: 20px;
+            /* Puedes ajustar el valor según tus necesidades */
+            color: #0d0e0e;
+            /* Puedes ajustar el color del texto según tus necesidades */
+        }
+
+        /* Estilos para el título "Introducción" */
+        .introduccion-title {
+            text-align: center;
+            padding-bottom: 10px;
+            /* Puedes ajustar el valor según tus necesidades */
+            color: #ff6600;
+            /* Puedes ajustar el color del texto según tus necesidades */
+        }
+
+        .two-column-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .text-column {
+            flex-basis: calc(70% - 10px);
+            /* 50% del ancho total, menos el espacio entre columnas */
+        }
+
+        .image-column {
+            flex-basis: calc(30% - 10px);
+            /* 50% del ancho total, menos el espacio entre columnas */
+        }
+
+        .two-column-container img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        .sol img {
+            max-width: 310px;
+            width: 100%;
+            height: 510px;
+        }
+
+        .sa {
+            width: 100vw;
+            /* Ancho completo de la ventana */
+            height: 100vh;
+            /* Altura completa de la ventana */
+            overflow: hidden;
+            /* Para asegurarse de que la imagen no cree desplazamiento */
+        }
+
+        .about__img-onea {
+            width: 100%;
+            /* Ajusta el porcentaje según tu preferencia */
+            /* La altura se ajusta automáticamente para mantener las proporciones */
+            display: block;
+            max-height: 350px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .grid-container,
+        .grid-containerf {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Dos columnas iguales */
+            gap: 20px;
+            /* Espacio entre las columnas */
+        }
+
+        .por {
+            grid-column: span 2;
+            /* Ocupa dos columnas completas */
+        }
+
+        @media screen and (max-width: 600px) {
+            .two-column-container {
+                flex-direction: column;
+                /* Cambia la dirección de las columnas a vertical en dispositivos pequeños */
+            }
+
+            .text-column,
+            .image-column {
+                flex-basis: 100%;
+                /* Ocupa el 100% del ancho en dispositivos pequeños */
+            }
+        }
+
+        /* Espaciado entre la imagen y el texto en dispositivos más grandes */
+        @media screen and (min-width: 601px) {
+            .grid-container {
+                gap: 40px;
+                /* Ajusta el espacio entre la imagen y el texto según sea necesario */
+            }
+        }
+
+        @media screen and (min-width: 908px) {}
+
+
+
+        /* Media query para dispositivos pequeños */
+        @media screen and (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                /* Una sola columna en dispositivos móviles */
+            }
+
+            .image-column {
+                order: 1;
+                /* Cambia el orden para que la imagen esté debajo del texto en dispositivos móviles */
+            }
+
+            .text-column {
+                order: 2;
+                /* Cambia el orden para que el texto esté encima de la imagen en dispositivos móviles */
+            }
+        }
+
+        /* Media query para dispositivos pequeños */
+        @media screen and (max-width: 908px) {
+            .grid-containerf {
+                grid-template-columns: 1fr;
+                /* Una sola columna en dispositivos móviles */
+            }
+
+            .image-columnf {
+                order: 2;
+            }
+
+        }
+
+       
+
+        @media screen and (min-width:  908px) and (max-width:20000px) {
+            .grid-containerf {
+              gap: 40px;
+            }
+            
+            }
+
+
+        /* Agrega estos estilos para centrar la imagen y limitar su ancho */
+        .image-container {
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 970px;
+            max-height: 250px;
+            /* Puedes ajustar este valor según sea necesario */
+            margin: 0 auto;
+            /* Esto centra la imagen horizontalmente */
+        }
+
+
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            /* Ajusta la altura según sea necesario */
+            background-image: url('assets/img/about1.jpg');
+            /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            /* Color del texto */
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        .background-container,
+        .background-container-1,
+        .ger {
+            transition: var(--img-transition);
+        }
+
+        .background-container:hover,
+        .background-container-1:hover,
+        .ger:hover {
+            transform: var(--img-scale);
+        }
+
+        .background-container-1 {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            /* Ajusta la altura según sea necesario */
+            background-image: url('assets/img/about2.jpg');
+            /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            /* Color del texto */
+            display: grid;
+            grid-template-columns: 50% 50%;
+
+        }
+
+        .text-container {
+            z-index: 1;
+            max-width: 80%;
+            /* Ajusta el ancho del texto según sea necesario */
+            grid-column: 2 / span 1;
+            /* Ocupa la primera columna en el grid */
+            align-self: center;
+            text-align: center;
+        }
+
+        .text-container-1 {
+            z-index: 1;
+            max-width: 80%;
+            /* Ajusta el ancho del texto según sea necesario */
+            grid-column: 1 / span 1;
+            /* Ocupa la primera columna en el grid */
+            align-self: center;
+            text-align: center;
+            margin-left: 70px;
+
+        }
+
+        .text-container,
+        .text-container-1 {
+            font-size: 16px;
+            /* Tamaño base */
+
+            /* Media query para pantallas de 200px hasta 400px */
+            @media screen and (min-width: 200px) and (max-width: 400px) {
+                font-size: 7px;
+                /* Tamaño para pantallas más pequeñas */
+
+                .por {
+                    font-size: 12px;
+                }
+            }
+
+            /* Media query para pantallas de 600px hasta 1438px */
+            @media screen and (min-width: 389px) and (max-width: 576px) {
+                font-size: 8px;
+
+                .por {
+                    font-size: 14px;
+                }
+
+            }
+
+            /* Media query para pantallas de 600px hasta 1438px */
+            @media screen and (min-width: 577px) and (max-width: 1438px) {
+                font-size: 10px;
+
+
+            }
+
+
+            @media screen and (min-width: 1000px) {
+                margin-left: 96px;
+                margin-right: 79px;
+                /* Agrega un margen izquierdo para pantallas medianas */
+            }
+
+
+
+
+
+        }
+
+        /*
+        @media screen and (min-width: 100px) and (max-width: 749px) {
+
+            .grid-container {
+                grid-template-columns: 1fr;
+             
+            }
+        */
+
+
+        @media screen and (min-width: 923px) and (max-width:1199px) {}
+
+        .slider-container {
+            width: 100%;
+            height: 63vh;
+            background-image: url('Images/bg-img.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-images {
+            display: flex;
+            align-items: center;
+            gap: 21px;
+        }
+
+        .slider-images img {
+            width: 100%;
+            height: 79%;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .slider-img {
+            width: 110px;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            transition: 0.7s ease;
+        }
+
+        .slider-images .slider-img:first-child,
+        .slider-images .slider-img:nth-child(5),
+        .slider-images .slider-img:last-child {
+            height: 300px;
+        }
+
+        .slider-images .slider-img:nth-child(2),
+        .slider-images .slider-img:nth-child(4),
+        .slider-images .slider-img:nth-child(6) {
+            height: 380px;
+        }
+
+        .slider-images .slider-img:nth-child(3) {
+            height: 565px;
+        }
+
+        .slider-img h1 {
+            font-family: "Jost", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: left;
+            text-transform: uppercase;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            transform: rotate(270deg);
+            transition: 0.7s ease;
+        }
+
+        .details {
+            position: absolute;
+            top: 10px;
+            left: 40px;
+        }
+
+        .details h2 {
+            font-family: "Jost", sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            text-align: left;
+            line-height: 43px;
+            text-align: left;
+            color: #fff;
+            text-transform: uppercase;
+            transition: 0.7s ease;
+            display: none;
+        }
+
+        .details p {
+            font-family: "Jost", sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            text-align: left;
+            line-height: 20px;
+            text-align: justify;
+            color: #fff;
+            text-transform: uppercase;
+            transition: 0.7s ease;
+            display: none;
+            margin-right: 4%;
+        }
+
+        .slider-img.active {
+            width: 500px !important;
+            height: 600px !important;
+        }
+
+        .slider-img.active h1 {
+            display: none;
+        }
+
+        .slider-img.active .details p,
+        .slider-img.active .details h2 {
+            display: block;
+        }
+
+
+        @media (min-width: 1021px) and (max-width: 1320px) {
+
+            .slider-img {
+                width: 100px;
+
+            }
+
+            .slider-img.active {
+                width: 450px !important;
+                height: 600px !important;
+            }
+
+
+        }
+
+
+        @media (min-width: 965px) and (max-width: 1020px) {
+
+            .slider-img {
+                width: 80px;
+
+            }
+
+            .slider-img.active {
+                width: 460px !important;
+                height: 600px !important;
+            }
+
+
+
+
+
+
+        }
+
+
+        @media (min-width: 899px) and (max-width: 965px) {
+
+            .slider-img {
+                width: 70px;
+
+            }
+
+            .slider-img.active {
+                width: 400px !important;
+                height: 600px !important;
+            }
+
+
+        }
+
+
+        @media (min-width: 780px) and (max-width: 899px) {
+
+            .slider-img {
+                width: 70px;
+
+            }
+
+            .slider-img.active {
+                width: 398px !important;
+                height: 600px !important;
+            }
+
+
+
+
+        }
+
+
+
+
+
+        @media(min-width: 677px) and (max-width: 780px) {
+
+            .slider-img {
+                width: 70px;
+
+            }
+
+            .slider-img.active {
+                width: 280px !important;
+                height: 600px !important;
+            }
+
+
+            .details p {
+
+                font-size: 8px;
+
+            }
+
+            .details h2 {
+                font-family: "Jost", sans-serif;
+                font-size: 20px;
+            }
+
+
+
+        }
+
+        @media(min-width: 634px) and (max-width: 677px) {
+
+            .slider-img {
+                width: 65px;
+
+            }
+
+            .slider-img.active {
+                width: 280px !important;
+                height: 600px !important;
+            }
+
+
+            .details p {
+
+                font-size: 8px;
+
+            }
+
+            .details h2 {
+                font-family: "Jost", sans-serif;
+                font-size: 20px;
+
+            }
+
+
+
+        }
+
+        @media(min-width: 614px) and (max-width: 634px) {
+
+            .slider-img {
+                width: 60px;
+
+            }
+
+            .slider-img.active {
+                width: 280px !important;
+                height: 600px !important;
+            }
+
+
+            .details p {
+
+                font-size: 8px;
+
+            }
+
+            .details h2 {
+                font-family: "Jost", sans-serif;
+                font-size: 19px;
+
+            }
+
+
+
+        }
+
+        @media(min-width: 585px) and (max-width: 614px) {
+
+            .slider-img {
+                width: 50px;
+
+            }
+
+            .slider-img.active {
+                width: 290px !important;
+                height: 558px !important;
+            }
+
+
+            .details p {
+
+                font-size: 8px;
+
+            }
+
+
+            .slider-img h1 {
+
+                font-size: 15px;
+
+            }
+
+            .details h2 {
+                font-family: "Jost", sans-serif;
+                font-size: 18px;
+
+            }
+
+
+            .slider-images .slider-img:first-child,
+            .slider-images .slider-img:nth-child(5),
+            .slider-images .slider-img:last-child {
+                height: 300px;
+            }
+
+            .slider-images .slider-img:nth-child(2),
+            .slider-images .slider-img:nth-child(4),
+            .slider-images .slider-img:nth-child(6) {
+                height: 340px;
+            }
+
+            .slider-images .slider-img:nth-child(3) {
+                height: 480px;
+            }
+
+
+
+
+        }
+
+
+
+
+        @media(min-width: 528px) and (max-width: 585px) {
+
+            .slider-img {
+                width: 40px;
+
+            }
+
+            .slider-img.active {
+                width: 280px !important;
+                height: 458px !important;
+            }
+
+
+            .details p {
+
+                font-size: 6px;
+
+            }
+
+
+            .slider-img h1 {
+
+                font-size: 10px !important;
+
+            }
+
+            .details h2 {
+                font-family: "Jost", sans-serif;
+                font-size: 10px;
+
+            }
+
+            .slider-images .slider-img:first-child,
+            .slider-images .slider-img:nth-child(5),
+            .slider-images .slider-img:last-child {
+                height: 300px;
+            }
+
+            .slider-images .slider-img:nth-child(2),
+            .slider-images .slider-img:nth-child(4),
+            .slider-images .slider-img:nth-child(6) {
+                height: 340px;
+            }
+
+            .slider-images .slider-img:nth-child(3) {
+                height: 400px;
+            }
+
+
+
+
+        }
+
+        @media(min-width: 479px) and (max-width: 528px) {
+
+            .slider-img {
+                width: 30px;
+
+            }
+
+            .slider-img.active {
+                width: 270px !important;
+                height: 458px !important;
+            }
+
+
+            .details p {
+
+                font-size: 6px;
+
+            }
+
+
+            .slider-img h1 {
+
+                font-size: 10px !important;
+
+            }
+
+            .details h2 {
+                font-family: "Jost", sans-serif;
+                font-size: 10px;
+
+            }
+
+            .slider-images .slider-img:first-child,
+            .slider-images .slider-img:nth-child(5),
+            .slider-images .slider-img:last-child {
+                height: 300px;
+            }
+
+            .slider-images .slider-img:nth-child(2),
+            .slider-images .slider-img:nth-child(4),
+            .slider-images .slider-img:nth-child(6) {
+                height: 340px;
+            }
+
+            .slider-images .slider-img:nth-child(3) {
+                height: 392px;
+            }
+
+
+
+
+        }
+
+        @media(min-width: 100px) and (max-width: 479px) {
+            .slider-container, .orale {
+                display: none;
+            }
+
+
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <main class="main">
+
+        <h1 class=" fundamentos-title title">FUNDAMENTOS DEL ARTE ESTILIZADO <br> </h1>
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about" >
+
+
+
+            <div class="about__container container grid " style="gap: 40px;">
+                <div class=" about__data animated">
+                    <h2 class="por delaySmall">Definición de arte estilizado</h2>
+
+                    <p class="about__description animar">
+                        El arte estilizado se caracteriza por su enfoque en el estilo y el concepto en lugar de buscar
+                        una representación realista. En lugar de intentar una fidelidad fotográfica, busca la
+                        simplificación, la exageración y la interpretación creativa. Este enfoque se traduce en la
+                        creación de atmósferas y experiencias visuales que son únicas, memorables y a menudo capaces de
+                        transmitir emociones y narrativas de manera más impactante que la representación puramente
+                        realista.
+                        <br><br>
+
+                        Esto puede ser muy útil para representar un sentimiento o una sensación en particular. Por
+                        ejemplo, en videojuegos, el arte estilizado puede ser usado para crear un ambiente
+                        intencionadamente oscuro o aterrador, o incluso alegre y colorido pudiendo llevar a unos diseños
+                        muy icónicos y fáciles de reconocer.
+
+                    </p>
+
+                </div>
+
+                <div class="img-a delayMedium">
+                    <div class="about__img-overlay gusa">
+                        <img src="assets/img/simon-fuchs-toronto-01.jpg" alt="" class="about__img-one"><br><br>
+                        <p class="about__description animar" style="text-align: center; text-decoration: underline;">
+                            <a href="https://www.artstation.com/artwork/8lKGPn" target="_blank">Artstation-overwatch 2,
+                                Toronto</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="about__container container space ">
+                <div class="grid-containerf">
+                    <div class="image-columnf delaySmallBottom " style="margin-top:5%;">
+                        <img src="assets/img/loro.PNG" alt="" class="about__img-onea">
+                        <p class="about__description" style="text-align: center; text-decoration: underline;">
+                            <a href="https://www.artstation.com/artwork/14qgzo" target="_blank">Artstation-overwatch 2,
+                                Colosseo</a>
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-column ">
+                            <h2 class="por delayMedium" style="text-align: center;"><br>Los diferentes estilos de arte
+                                estilizado</h2>
+                            <p class="about__description delayLarge" style="text-align:justify;">
+
+                                En el maravilloso mundo del diseño de escenarios estilizados en videojuegos, uno de los
+                                aspectos más emocionantes y enriquecedores es la diversidad de estilos artísticos que se
+                                pueden emplear para dar vida a mundos virtuales únicos, cada uno con sus propias
+                                características distintivas. Algunos de los estilos más comunes incluyen: cartoon,
+                                cómics, anime, realista simplificado y cel shaded, entre otros.
+                                <br><br>
+
+
+                            </p>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+        </section>
+
+        <section class="about orale section  delaySmall" id="about" style="margin-top: 100px;">
+            <section class="slider-container ">
+                <div class="slider-images ">
+                    <div class="slider-img  swiper-slide " style="opacity: 0.9;">
+                        <img src="assets/img/1_Cartoon.jpg" alt="1" />
+                        <h1 style="font-size: 16px;">Cartoon</h1>
+                        <div class="details">
+                            <h2>Cartoon</h2>
+                            <p>El escenario debe ser coherente con la historia del juego, es decir, un escenario para un
+                                juego de acción ambientado en un mundo postapocalíptico debería ser oscuro y desolado,
+                                mientras que un escenario para un juego de aventuras ambientado en un mundo de fantasía
+                                debería ser colorido y vibrante.</p>
+                        </div>
+                    </div>
+                    <div class="slider-img  swiper-slide" style="opacity: 0.9;">
+                        <img src="assets/img/1_Comicñ.jpg" alt="2" />
+                        <h1>Cómics</h1>
+                        <div class="details">
+                            <h2>Cómics</h2>
+                            <p>Suele tomar inspiración de las historietas tradicionales. Usa tonos grises o colores muy
+                                fuertes. Y en muchos casos, tiene trazos gruesos y personajes con formas simples.
+                                Algunos ejemplos incluyen "Spider-Man: Shattered Dimensions", "Batman: Arkham Asylum" y
+                                "The Wolf Among Us".</p>
+                        </div>
+                    </div>
+                    <div class="slider-img  swiper-slide">
+                        <img src="assets/img/1_RealistaSimplificado.jpg" alt="3" />
+                        <h1>Realista</h1>
+                        <div class="details">
+                            <h2>Realista simplificado</h2>
+                            <p>Este estilo intenta recurrir a un estilo más realista, pero simplificado. Es un estilo
+                                interesante, ya que mantiene detalles realistas como sombras y luz, pero con figuras más
+                                simples, "Grand Theft Auto V", "Uncharted 3" y "Bioshock " sirven como buenos ejemplos
+                                del estilo de arte realista simplificado. Todos estos juegos tienen una apariencia
+                                simple pero con un nivel de detalle visual notable.</p>
+                        </div>
+                    </div>
+                    <div class="slider-img active">
+                        <img src="assets/img/1_Celshading.jpg" alt="4" />
+                        <h1>Cel shaded</h1>
+                        <div class="details">
+                            <h2>Cel shaded</h2>
+                            <p>Aplica efectos específicos que se parecen a los trazos del dibujo tradicional. El efecto
+                                cel shaded es muy reconocible porque las sombras son celulares y reducen el detalle a la
+                                vez que añaden personalidad. Un gran ejemplo es el juego "The Legend of Zelda: The Wind
+                                Waker" en GameCube, que popularizó este estilo en el mundo de los videojuegos. Otros
+                                juegos como "Okami" y "Ni no Kuni" también usan este estilo.</p>
+                        </div>
+                    </div>
+
+                    <div class="slider-img  swiper-slide">
+                        <img src="assets/img/1_Anime.jpg" alt="3" />
+                        <h1>Anime</h1>
+                        <div class="details">
+                            <h2>Anime</h2>
+                            <p>Como su nombre indica, este estilo toma inspiración en el anime japonés, y generalmente
+                                tiene líneas limpias, un colorido vívido y personajes con características faciales
+                                dramáticas. Los juegos como "Persona", "Nier: Automata" y "Xenoblade Chronicles" son un
+                                excelente ejemplo.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+
+
+
+
+
+        <section class="about section" id="about">
+            <div class=" about__data container">
+                <h2 class="por delaySmall ">Composición</h2>
+
+                <p class="about__description delayLargeTopExtra">
+                    De forma simplificada se puede decir que la composición es como la manera en la que se distribuyen
+                    los elementos dentro de una imagen. Es una manera de mostrar información de manera visual. Una
+                    composición se usa para crear un sentido visual y guiar la atención del espectador, haciendo que vea
+                    y entienda el mensaje que la imagen transmite.
+                    <br><br>
+
+                    En el arte estilizado a menudo se usa una composición simplificada, en la cual se reduce la
+                    complejidad y la información, para enfatizar ciertos aspectos y crear un sentido visual. Por
+                    ejemplo, se puede usar la composición asimétrica para dar un sentido de desequilibrio, o la
+                    composición simétrica para dar una sensación de equilibrio.
+
+                </p>
+
+
+                <div class="animar">
+                    <div class="image-container ">
+                        <img src="assets/img/kevin-gnutzmans-observatory-room-0.jpg" alt="" class="ger"><br><br>
+                        <p class="about__description animar" style="text-align: center; text-decoration: underline;">
+                            <a href="https://www.artstation.com/artwork/QnGXkr"
+                                target="_blank">ArtStation-Classroom,Kevin Gnutzmans</a>
+                        </p>
+                    </div>
+
+                    <p class="about__description delayLargeTopExtra">
+                        Para entenderlo de manera simple dentro del contexto de los videojuegos podrías imaginar una
+                        biblioteca en donde un diseñador podría usar una composición simétrica, colocando un instrumento
+                        importante o un artilugio grande en el centro de la biblioteca, enfocando toda la atención en
+                        esta estructura central y usando el resto de elementos para enmarcar y complementarlo. Así mismo
+                        podríamos dar un ejemplo asimétrico con la misma biblioteca, solo que esta vez podría ser una
+                        biblioteca con una gran cantidad de elementos extraños y desordenados. Los libros podrían tener
+                        una apariencia extraña, las mesas podrían estar desplazadas en la más variada de las formas, y
+                        el diseño del entorno podría transmitir tensión e intriga. Cabe decir que hay muchos tipos de
+                        composición, pero para efectos de esta guía básica, bastará con los anteriormente mencionados.
+                        <br><br>
+                    </p>
+
+
+
+                </div>
+
+
+                <div class="about__container container grid ">
+                    <div class=" about__data animated">
+                        <h2 class="por delaySmall">Perspectiva</h2>
+
+                        <p class="about__description delayLargeTopExtra">
+                            La perspectiva se usa para crear mundos que transmiten la sensación de profundidad y
+                            realidad, o para crear ambientes surrealistas y fantásticos. La perspectiva también puede
+                            servir para enfatizar el tamaño y la importancia de ciertos elementos de un escenario, y así
+                            dar énfasis a los elementos que son realmente importantes. Esto nos permite crear escenarios
+                            con personalidad y estilo único. La perspectiva se puede usar para enfatizar aspectos del
+                            escenario, como la arquitectura, los colores o los elementos centrales. Por ejemplo, si se
+                            quiere que una escena transmita calma y tranquilidad, podría usarse una perspectiva más
+                            estática y lineal.
+                            <br><br>
+
+                            Para entenderlo mejor podríamos tomar el ejemplo de los escenarios de los juegos de Zelda.
+                            En los escenarios de estos juegos, la perspectiva es más estática, con líneas rectas y poco
+                            uso de ángulos cónicos. Esto hace que los escenarios se vean más tranquilos y amigables,
+                            creando un ambiente perfecto para los juegos.
+                            <br><br>
+                            Por este motivo la perspectiva es importante porque puede marcar la diferencia entre un
+                            escenario aburrido y un escenario intrigante y memorable. Puede cambiar el tono y la
+                            sensación de una escena y crear ambientes con personalidad. Y esto es crucial para los
+                            escenarios de videojuegos estilizados, ya que un escenario con buena perspectiva puede hacer
+                            que los jugadores se sientan inmersos en el mundo y en la historia.
+
+
+
+                        </p>
+
+                    </div>
+
+                    <div class="img-a animar">
+                        <div class="about__img-overlay sol">
+                            <img src="assets/img/ui.PNG" alt="" class="about__img-one"><br><br>
+                            <p class="about__description animar"
+                                style="text-align: center; text-decoration: underline;">
+                                <a href="https://www.artstation.com/artwork/nQgkKK" target="_blank">Artstation - Beyond
+                                    the valley</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+
+
+    </main>
+
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup__icon"></i>
+    </a>
+    <!-- Agrega la etiqueta de script para la biblioteca ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Usa este script para inicializar ScrollReveal -->
+    <script>
+        ScrollReveal().reveal('.animar', {
+            origin: 'left',
+            distance: '50px',
+            duration: 2000,
+            delay: 550
+        });
+
+
+        const scrollTop = ScrollReveal({
+            origin: 'top',
+            distance: '50px',
+            duration: 1000
+        });
+
+        scrollTop.reveal('.delaySmall', { delay: 600 });
+        scrollTop.reveal('.delayMedium', { delay: 500 });
+        scrollTop.reveal('.delayLarge', { delay: 700 });
+        scrollTop.reveal('.delayLargeTopExtra', { delay: 900 });
+
+
+        const scrollBottom = ScrollReveal({
+            origin: 'bottom',
+            distance: '50px',
+            duration: 2300
+        })
+
+        scrollBottom.reveal('.delaySmallBottom', { delay: 300 })
+        scrollBottom.reveal('.delayMediumBottom', { delay: 500 })
+        scrollBottom.reveal('.delayLargeBottom', { delay: 700 })
+        scrollBottom.reveal('.delayLargeBottomExtra', { delay: 900 })
+
+
+        const scrollRight = ScrollReveal({
+            origin: 'left',
+            distance: '-20px',
+            duration: 2200
+        })
+
+        scrollRight.reveal('.title', { delay: 550 })
+
+
+
+
+
+    </script>
+
+
+    <script>
+        function scrollUp() {
+            const scrollUp = document.getElementById('scroll-up');
+            // When the scroll is higher than 200 viewport height, add the show-scroll class to the a tag with the scroll-top class
+            if (this.scrollY >= 200) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+        }
+        window.addEventListener('scroll', scrollUp)
+    </script>
+
+
+    <script src="assets/js/jQuery.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".slider-img").on("click", function () {
+                $(".slider-img").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

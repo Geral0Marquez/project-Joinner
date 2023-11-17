@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="assets/img/oks.png" type="image/png">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- En el head de tu HTML -->
+
+
+
+    <title>TÉCNICAS Y HERRAMIENTAS</title>
+    <style>
+        .card {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            margin: 20px;
+        }
+
+        .card .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: .5s;
+        }
+
+        .card .front {
+            transform: perspective(600px) rotateY(0deg);
+            box-shadow: 0 5px 10px #000;
+        }
+
+        .card .front img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card .front h3 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            color: #fff;
+            background: rgba(0, 0, 0, .4);
+            text-align: center;
+        }
+
+        .card .back {
+            transform: perspective(600px) rotateY(180deg);
+            background: rgb(3, 35, 54);
+            padding: 15px;
+            color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            box-shadow: 0 5px 10px #000;
+        }
+
+        .card .back .link {
+            border-top: solid 1px #f3f3f3;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .card .back .link a {
+            color: #f3f3f3;
+        }
+
+        .card .back h3 {
+            font-size: 30px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        .card .back p {
+            letter-spacing: 1px;
+        }
+
+        .card:hover .front {
+            transform: perspective(600px) rotateY(180deg);
+        }
+
+        .card:hover .back {
+            transform: perspective(600px) rotateY(360deg);
+        }
+
+        .grid-cad {
+            display: grid;
+            gap: 30px;
+
+
+        }
+
+
+
+        @media (min-width: 768px) {
+
+            .grid-cad {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (min-width: 992px) {
+
+            .grid-cad {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .grid-cad {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        @media (min-width: 500px) and (max-width: 768px) {
+
+            .about__description {
+                font-size: 19px;
+                /* Cambia el tamaño de la fuente */
+                margin-top: 33px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .about__description {
+                font-size: 16px;
+                margin-top: 3%;
+                /* Cambia el tamaño de la fuente */
+
+            }
+
+            .card {
+                width: 100%;
+            }
+
+        }
+
+
+        @media (min-width: 100px) and (max-width: 768px) {
+
+
+
+            .card {
+                width: auto;
+            }
+        }
+
+        @media (min-width: 376px) and (max-width: 532px) {
+
+            .about__description {
+                font-size: 15px;
+
+            }
+        }
+
+        @media (min-width: 100px) and (max-width: 375px) {
+
+            .about__description {
+                font-size: 11px;
+
+            }
+        }
+
+
+
+
+
+
+
+
+        /* Estilos para el título "FUNDAMENTOS DEL ARTE ESTILIZADO" */
+        .fundamentos-title {
+            text-align: center;
+            font-weight: bold;
+            padding-top: 5%;
+            padding-bottom: 20px;
+            /* Puedes ajustar el valor según tus necesidades */
+            color: #0d0e0e;
+            /* Puedes ajustar el color del texto según tus necesidades */
+        }
+
+        /* Estilos para el título "Introducción" */
+        .introduccion-title {
+            text-align: center;
+            padding-bottom: 10px;
+            /* Puedes ajustar el valor según tus necesidades */
+            color: #ff6600;
+            /* Puedes ajustar el color del texto según tus necesidades */
+        }
+
+        .two-column-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .text-column {
+            flex-basis: calc(70% - 10px);
+            /* 50% del ancho total, menos el espacio entre columnas */
+        }
+
+        .image-column {
+            flex-basis: calc(30% - 10px);
+            /* 50% del ancho total, menos el espacio entre columnas */
+        }
+
+        .two-column-container img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        .sol img {
+            max-width: 310px;
+            width: 100%;
+            height: 510px;
+        }
+
+        .sola img {
+            max-width: 400px;
+            width: 100%;
+            height: 404px;
+        }
+
+        .sa {
+            width: 100vw;
+            /* Ancho completo de la ventana */
+            height: 100vh;
+            /* Altura completa de la ventana */
+            overflow: hidden;
+            /* Para asegurarse de que la imagen no cree desplazamiento */
+        }
+
+        .about__img-onea {
+            width: 100%;
+            /* Ajusta el porcentaje según tu preferencia */
+            /* La altura se ajusta automáticamente para mantener las proporciones */
+            display: block;
+            max-height: 350px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about__img-onew {
+            width: 428px;
+            /* Ajusta el porcentaje según tu preferencia */
+            /* La altura se ajusta automáticamente para mantener las proporciones */
+            display: block;
+            max-height: 200px;
+            margin-bottom: 20px;
+            text-align: center;
+
+        }
+
+        .about__img-onep {
+            width: 450px;
+            /* Ajusta el porcentaje según tu preferencia */
+            /* La altura se ajusta automáticamente para mantener las proporciones */
+            display: block;
+            max-height: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Dos columnas iguales */
+            gap: 20px;
+            /* Espacio entre las columnas */
+        }
+
+        .por {
+            grid-column: span 2;
+            /* Ocupa dos columnas completas */
+        }
+
+        @media screen and (max-width: 600px) {
+            .two-column-container {
+                flex-direction: column;
+                /* Cambia la dirección de las columnas a vertical en dispositivos pequeños */
+            }
+
+            .text-column,
+            .image-column {
+                flex-basis: 100%;
+                /* Ocupa el 100% del ancho en dispositivos pequeños */
+            }
+        }
+
+        /* Espaciado entre la imagen y el texto en dispositivos más grandes */
+        @media screen and (min-width: 601px) {
+            .grid-container {
+                gap: 50px;
+                /* Ajusta el espacio entre la imagen y el texto según sea necesario */
+            }
+        }
+
+        /* Media query para dispositivos pequeños */
+        @media screen and (max-width: 945px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                /* Una sola columna en dispositivos móviles */
+            }
+
+            .image-column {
+                order: 1;
+                /* Cambia el orden para que la imagen esté debajo del texto en dispositivos móviles */
+            }
+
+
+
+
+            .text-column {
+                order: 2;
+                /* Cambia el orden para que el texto esté encima de la imagen en dispositivos móviles */
+            }
+        }
+
+
+        @media screen and (min-width: 100px) and (max-width: 768px) {
+
+
+            .image-columns {
+                order: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+
+
+
+
+        /* Agrega estos estilos para centrar la imagen y limitar su ancho */
+        .image-container {
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 970px;
+            max-height: 250px;
+            /* Puedes ajustar este valor según sea necesario */
+            margin: 0 auto;
+            /* Esto centra la imagen horizontalmente */
+        }
+
+
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            /* Ajusta la altura según sea necesario */
+            background-image: url('assets/img/about1.jpg');
+            /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            /* Color del texto */
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        .background-container-k {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            /* Ajusta la altura según sea necesario */
+            background-image: url('assets/img/about1.jpg');
+            /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            /* Color del texto */
+            display: grid;
+            grid-template-columns: 50% 50%;
+
+        }
+
+        .background-container-efe {
+            position: relative;
+            width: 90%;
+            height: 350px;
+            margin: 0 auto;
+            /* Ajusta la altura según sea necesario */
+            background-image: url('assets/img/about1.jpg');
+            /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            /* Color del texto */
+            display: grid;
+            grid-template-columns: 50% 50%;
+
+        }
+
+        .background-container,
+        .small-image,
+        .background-container-1,
+        .background-container-k,
+        .background-container-efe,
+        .ger {
+            transition: var(--img-transition);
+        }
+
+        .background-container:hover,
+        .background-container-1:hover,
+        .small-image:hover,
+        .background-container-k:hover,
+        .background-container-efe:hover,
+        .ger:hover {
+            transform: var(--img-scale);
+        }
+
+        .background-container-1 {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            /* Ajusta la altura según sea necesario */
+            background-image: url('assets/img/about2.jpg');
+            /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            /* Color del texto */
+            display: grid;
+            grid-template-columns: 50% 50%;
+
+        }
+
+        .text-container {
+            z-index: 1;
+            max-width: 80%;
+            /* Ajusta el ancho del texto según sea necesario */
+            grid-column: 2 / span 1;
+            /* Ocupa la primera columna en el grid */
+            align-self: center;
+            text-align: center;
+        }
+
+        .text-container-1 {
+            z-index: 1;
+            max-width: 80%;
+            /* Ajusta el ancho del texto según sea necesario */
+            grid-column: 1 / span 1;
+            /* Ocupa la primera columna en el grid */
+            align-self: center;
+            text-align: center;
+            margin-left: 70px;
+
+        }
+
+        .text-container,
+        .text-container-1 {
+            font-size: 16px;
+            /* Tamaño base */
+
+            /* Media query para pantallas de 200px hasta 400px */
+            @media screen and (min-width: 200px) and (max-width: 400px) {
+                font-size: 7px;
+                /* Tamaño para pantallas más pequeñas */
+
+                .por {
+                    font-size: 12px;
+                }
+
+            }
+
+            /* Media query para pantallas de 600px hasta 1438px */
+            @media screen and (min-width: 389px) and (max-width: 576px) {
+                font-size: 8px;
+
+                .por {
+                    font-size: 14px;
+                }
+
+            }
+
+            /* Media query para pantallas de 600px hasta 1438px */
+            @media screen and (min-width: 577px) and (max-width: 1438px) {
+                font-size: 10px;
+
+
+            }
+
+
+            @media screen and (min-width: 1000px) {
+                margin-left: 96px;
+                margin-right: 79px;
+                /* Agrega un margen izquierdo para pantallas medianas */
+            }
+
+
+
+
+
+
+
+
+
+        }
+
+
+        .small-images-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2%;
+            /* Espaciado entre las imágenes */
+            margin-top: 20px;
+            /* Margen superior */
+        }
+
+        .small-image {
+            width: 64px;
+            /* Ancho fijo para las imágenes pequeñas */
+            height: 64px;
+            display: block;
+            /* Eliminar espacio adicional debajo de las imágenes */
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main class="main">
+
+        <h1 class=" fundamentos-title title">TÉCNICAS Y HERRAMIENTAS<br> </h1>
+        <!--==================== ABOUT ====================-->
+
+        <div class=" container">
+
+            <p class="about__description delaySmall">
+                A continuación, abordaremos las técnicas y herramientas esenciales en mi flujo de trabajo con las
+                cuales te guiaré en el proceso de detallado artístico de escenarios estilizados. Descubrirás cómo
+                crear escenarios que no solo sean visualmente impresionantes, sino que también transmitan emociones
+                y una atmósfera única, al mismo tiempo que construyes un escenario optimizado y práctico para el
+                desarrollo de videojuegos a nivel profesional.
+                <br><br>
+                A medida que avanzamos, aprenderás a optimizar tus diseños para que sean prácticos y efectivos en el
+                ámbito profesional del desarrollo de videojuegos. Estas técnicas y herramientas son esenciales para
+                cualquier aspirante a diseñador de escenarios, y te proporcionarán una sólida base para enfrentar
+                los desafíos de la creación de entornos estilizados de manera exitosa.
+                <br><br>
+                Ademas, es importante señalar que este enfoque se centra en lograr un estilo estilizado para
+                escenarios y no constituye un curso de modelado en 3D. Se trata de una guía que se centra en
+                técnicas y herramientas específicas para lograr un estilo estilizado en la creación de escenarios.
+            </p>
+
+            <div class="small-images-container animar">
+                <img src="assets/img/Icon_Maya.png" alt="" class="small-image  animar">
+                <img src="assets/img/Icon_PT.png" alt="" class="small-image  animar">
+                <img src="assets/img/Icon_Zbrash.png" alt="" class="small-image  animar">
+            </div>
+
+            <section class="about section" id="about">
+                <div class="about__container container  ">
+                    <div class="grid-container">
+
+
+
+                        <div>
+
+                            <div class="text-column ">
+
+
+                                <p class="about__description " style="text-align:justify;">
+
+                                <h2 class="por delaySmallBottom">UV Mapping</h2>
+                                <p class="delaySmall" style="text-align:justify; "> El despliegue adecuado de las UV's
+                                    es quizás el
+                                    primer paso para destacarte como artista 3D. Cuanto más explores y aprendas esta
+                                    técnica, más notarán tus habilidades y rendimiento otros artistas. Agregarás un
+                                    valor significativo a tu trabajo y, como resultado, te volverás un activo
+                                    valioso para las empresas del sector.
+                                    <br>
+                                    Como primer paso, debes analizar detenidamente la geometría de tus activos.
+                                    Debes tener en cuenta que si es demasiado grande, es probable que la opción
+                                    adecuada sea diseñar algo conocido como "trim sheet", lo cual veremos más
+                                    adelante. Por otro lado, si es demasiado pequeño, como en el caso que se muestra
+                                    a continuación, deberás buscar la manera de aprovechar al máximo el espacio del
+                                    tile de texturas.
+                                </p>
+
+
+
+                                <br><br>
+
+
+                                </p>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="image-columns  animar"><br>
+                            <iframe width="100%" height="350px" src="https://www.youtube.com/embed/hU8js08BinA"
+                                frameborder="0" allowfullscreen class="about__img-onea"></iframe>
+
+                        </div>
+
+
+
+
+                    </div>
+            </section>
+
+
+            <div class="background-container-k delayMediumBottom">
+
+            </div>
+
+            <section class="about section" id="about">
+                <div class="about__container container  ">
+                    <div class="grid-container">
+
+
+
+                        <div>
+
+                            <div class="text-column ">
+
+
+                                <p class="about__description" style="text-align:justify;">
+
+                                <h2 class="por title">Texel Density</h2>
+                                <p  class=" delaySmall"style="text-align:justify;"> ¿Te has preguntado por qué algunos juegos se ven
+                                    increíbles, con texturas súper detalladas, mientras que otros parecen pixelados
+                                    o borrosos? Bueno, gran parte de la respuesta está en lo que se conoce como
+                                    Texel Density y te volvera de oro si lo comprendes.
+                                    <br>
+                                    El Texel Density mide cuántos píxeles de textura tenemos por cada centímetro o
+                                    metro de nuestro objeto en el mundo virtual. Cuanto mayor sea esta densidad, más
+                                    detalladas se verán nuestras texturas en el juego.
+                                </p>
+
+
+
+                                <br><br>
+
+
+                                </p>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="image-columns animar"><br>
+                            <iframe width="100%" height="350px" src="https://www.youtube.com/embed/QLKvhnRcATk"
+                                frameborder="0" allowfullscreen class="about__img-onea"></iframe>
+
+                        </div>
+
+
+
+
+                    </div>
+            </section>
+
+            <div class="background-container animar">
+
+            </div>
+
+            <section class="about section" id="about">
+                <div class="about__container container  ">
+                    <div class="grid-container">
+
+
+
+                        <div>
+
+                            <div class="text-column ">
+
+
+                                <p class="about__description" style="text-align:justify;">
+
+                                <h2 class="por title">Texturing</h2>
+                                <p class="delaySmall" style="text-align:justify;"> Para este paso suelo emplear Adobe substance painter
+                                    o designer y antes de iniciar el proceso de texturización, es crucial determinar
+                                    la plataforma a la que deseamos dirigir nuestros activos. En esta guía, me
+                                    enfocare en el uso del motor de videojuegos Unreal Engine, por lo que el flujo
+                                    de trabajo que presentaremos a continuación se basará en el perfil PBR
+                                    (Physically Based Rendering). Sin embargo, si tienes la intención de emplear un
+                                    motor gráfico diferente, como Unity, es importante tener en cuenta que este se
+                                    basa en el modelo Specular Glossiness.
+                                    <br><br>
+                                    La elección del perfil PBR adecuado es fundamental para asegurar la consistencia
+                                    y la calidad visual de los resultados en motores como Unreal Engine y Unity.
+                                    Asegurate de que tu elección se ajuste a las recomendaciones del motor y a las
+                                    necesidades específicas de tu proyecto ya que esto te ayudará a evitar problemas
+                                    visuales y a optimizar el rendimiento.
+
+
+
+                                    <br><br>
+
+
+                                </p>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="image-columns animar"><br>
+                            <iframe width="100%" height="350px" src="https://www.youtube.com/embed/FbYLqzW4Z_Y"
+                                frameborder="0" allowfullscreen class="about__img-onea"></iframe>
+
+                        </div>
+
+
+
+
+                    </div>
+            </section>
+
+            <div class="background-container">
+
+            </div>
+
+            <section class="about section" id="about">
+
+                <h2 class="por title" style="text-align: center;">Mapas de Texturas en Subtance Painter</h2>
+                <section class="about section" id="about">
+                    <div class="grid-cad">
+                        <div class="card animar">
+                            <div class="face front">
+                                <img src="assets/img/Albedo.png" alt="">
+                                <h3>Albedo</h3>
+                            </div>
+                            <div class="face back">
+
+                                <p class="about__description" style="text-align:justify;">El Albedo determina el
+                                    color y
+                                    la apariencia general de la superficie de un objeto en condiciones de
+                                    iluminación
+                                    difusa, sin tener en cuenta los efectos de brillo, sombras o reflejos
+                                    especulares.<br>
+                                    se recomienda mantener el rango de colores oscuros en un intervalo que oscile
+                                    entre
+                                    30 y 50 en los valores RGB, mientras que el color más brillante no debe superar
+                                    los
+                                    240 en la escala RGB.</p>
+
+                            </div>
+                        </div>
+                        <div class="card animar">
+                            <div class="face front">
+                                <img src="assets/img/Metalic.png" alt="">
+                                <h3>Metallic</h3>
+                            </div>
+                            <div class="face back">
+
+                                <p class="about__description" style="text-align:justify;">El mapa de Metallic indica
+                                    que
+                                    la superficie es más metálica y reflejará la luz de manera similar a un metal.
+                                    Al igual que con la capa Albedo, es importante ajustar los valores de Metallic
+                                    dentro de un rango apropiado para evitar efectos no deseados. Típicamente, los
+                                    valores de Metallic suelen variar entre 0 (no metálico) y 1 (totalmente
+                                    metálico).
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="card animar">
+                            <div class="face front">
+                                <img src="assets/img/Roughness.png" alt="">
+                                <h3>Roughness</h3>
+                            </div>
+                            <div class="face back">
+
+                                <p class="about__description" style="text-align:justify;">
+                                    El Roughness indica que la superficie es rugosa y difunde la luz en muchas
+                                    direcciones, lo que resulta en una reflexión suave o difusa.
+                                    Al ajustar la capa Roughness adecuadamente, puedes controlar la apariencia de
+                                    materiales que van desde superficies altamente pulidas, como el vidrio o el
+                                    plástico
+                                    brillante, hasta superficies rugosas como el papel o la madera áspera.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="card animar">
+                            <div class="face front">
+                                <img src="assets/img/Normal.png" alt="">
+                                <h3>Normal</h3>
+                            </div>
+                            <div class="face back">
+
+                                <p class="about__description" style="text-align:justify;">
+                                    El mapa de "Normal" en Substance Painter se utiliza para representar detalles en
+                                    relieve en la superficie de un objeto en un modelo 3D. Se emplea para simular
+                                    sombras, arrugas, rugosidades y otros detalles visuales que afectan la
+                                    apariencia
+                                    tridimensional de un material. Esta capa permite dar textura y profundidad a los
+                                    objetos al modificar cómo interactúan con la luz y cómo se perciben en 3D.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="card animar">
+                            <div class="face front">
+                                <img src="assets/img/Ambient Occlusion.png" alt="">
+                                <h3>Ambient Occlusion</h3>
+                            </div>
+                            <div class="face back">
+
+                                <p class="about__description" style="text-align:justify;">
+                                    Este mapa lo utilizaras para simular áreas donde la luz tiende a tener
+                                    dificultades
+                                    para llegar debido a la presencia de interacciones con objetos cercanos. Esto
+                                    crea
+                                    sombras suaves y aumenta el realismo visual al resaltar los detalles y
+                                    hendiduras en
+                                    la superficie del objeto, agregando profundidad y definición a la textura del
+                                    modelo
+                                    3D.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="card animar">
+                            <div class="face front">
+                                <img src="assets/img/Height.png" alt="">
+                                <h3>Height</h3>
+                            </div>
+                            <div class="face back">
+
+                                <p class="about__description" style="text-align:justify;">
+                                    Este mapa te permite agregar detalles tridimensionales, como relieve, rugosidad
+                                    y
+                                    bordes a la textura, lo que contribuye a una apariencia más creible y con más
+                                    profundidad en el modelo.<br>
+                                    Dentro de nuestro objetivos puedes usar el Height Map para enfocarte en resaltar
+                                    las
+                                    características más distintivas y estilizadas del objeto.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="card animar">
+                            <div class="face front">
+                                <img src="assets/img/Material.png" alt="">
+                                <h3>Material</h3>
+                            </div>
+                            <div class="face back">
+
+                                <p class="about__description" style="text-align:justify;">
+                                    Este mapa es el que utilizaras para visualizar un material completo en un objeto
+                                    3D
+                                    en lugar de verlos individualmente como los anteriormente lo repasamos.
+                                    Aqui las propiedades individuales como Albedo, Roughness o Metallic. se asignan
+                                    en
+                                    un conjunto de propiedades de material predefinidas o personalizadas a toda la
+                                    superficie del objeto de una vez.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <p class="about__description delaySmall" style="text-align:justify;">Ajustando y combinando creativamente estos
+                    mapas, podemos alcanzar un estilo estilizado único que enfatiza las características deseadas y
+                    simplifica los detalles a nuestra elección. La versatilidad de Substance Painter para experimentar y
+                    personalizar estos mapas nos permite lograr el resultado deseado en nuestro estilo estilizado.</p>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+            </section>
+
+
+
+
+
+
+
+    </main>
+
+
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup__icon"></i>
+    </a>
+    <!-- Agrega la etiqueta de script para la biblioteca ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Usa este script para inicializar ScrollReveal -->
+    <script>
+        ScrollReveal().reveal('.animar', {
+            origin: 'left',
+            distance: '50px',
+            duration: 2000,
+            delay: 550
+        });
+
+
+        const scrollTop = ScrollReveal({
+            origin: 'top',
+            distance: '50px',
+            duration: 1000
+        });
+
+        scrollTop.reveal('.delaySmall', { delay: 600 });
+        scrollTop.reveal('.delayMedium', { delay: 500 });
+        scrollTop.reveal('.delayLarge', { delay: 700 });
+        scrollTop.reveal('.delayLargeTopExtra', { delay: 900 });
+
+
+        const scrollBottom = ScrollReveal({
+            origin: 'bottom',
+            distance: '50px',
+            duration: 2300
+        })
+
+        scrollBottom.reveal('.delaySmallBottom', { delay: 300 })
+        scrollBottom.reveal('.delayMediumBottom', { delay: 500 })
+        scrollBottom.reveal('.delayLargeBottom', { delay: 700 })
+        scrollBottom.reveal('.delayLargeBottomExtra', { delay: 900 })
+
+
+        const scrollRight = ScrollReveal({
+            origin: 'left',
+            distance: '-20px',
+            duration: 2200
+        })
+
+        scrollRight.reveal('.title', { delay: 550 })
+
+
+
+
+
+    </script>
+
+
+    <script>
+        function scrollUp() {
+            const scrollUp = document.getElementById('scroll-up');
+            // When the scroll is higher than 200 viewport height, add the show-scroll class to the a tag with the scroll-top class
+            if (this.scrollY >= 200) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+        }
+        window.addEventListener('scroll', scrollUp)
+    </script>
+
+
+    <script src="assets/js/jQuery.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".slider-img").on("click", function () {
+                $(".slider-img").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

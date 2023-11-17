@@ -138,6 +138,7 @@ sr.reveal(`.about__data,
 
 sr.reveal(`.about__img-overlay, 
            .video__content,
+           .animate-fadeInUp,
            .subscribe__form`,{
     origin: 'right',
     interval: 100,

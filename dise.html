@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="assets/img/oks.png" type="image/png">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- En el head de tu HTML -->
+
+
+
+    <title>DISEÑO Y CREACIÓN DE ESCENARIOS ESTILIZADOS</title>
+    <style>
+        /* Estilos para el título "FUNDAMENTOS DEL ARTE ESTILIZADO" */
+        .fundamentos-title {
+            text-align: center;
+            font-weight: bold;
+            padding-top: 5%;
+            padding-bottom: 20px;
+            /* Puedes ajustar el valor según tus necesidades */
+            color: #0d0e0e;
+            /* Puedes ajustar el color del texto según tus necesidades */
+        }
+
+        /* Estilos para el título "Introducción" */
+        .introduccion-title {
+            text-align: center;
+            padding-bottom: 10px;
+            /* Puedes ajustar el valor según tus necesidades */
+            color: #ff6600;
+            /* Puedes ajustar el color del texto según tus necesidades */
+        }
+
+        .two-column-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .text-column {
+            flex-basis: calc(70% - 10px);
+            /* 50% del ancho total, menos el espacio entre columnas */
+        }
+
+        .image-column {
+            flex-basis: calc(30% - 10px);
+            /* 50% del ancho total, menos el espacio entre columnas */
+        }
+
+        .two-column-container img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        .sol img {
+            max-width: 310px;
+            width: 100%;
+            height: 510px;
+        }
+
+        .sola img {
+            max-width: 400px;
+            width: 100%;
+            height: 404px;
+        }
+
+        .sa {
+            width: 100vw;
+            /* Ancho completo de la ventana */
+            height: 100vh;
+            /* Altura completa de la ventana */
+            overflow: hidden;
+            /* Para asegurarse de que la imagen no cree desplazamiento */
+        }
+
+        .about__img-onea {
+            width: 100%;
+            /* Ajusta el porcentaje según tu preferencia */
+            /* La altura se ajusta automáticamente para mantener las proporciones */
+            display: block;
+            height: 279px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about__img-onew {
+            width: 428px;
+            /* Ajusta el porcentaje según tu preferencia */
+            /* La altura se ajusta automáticamente para mantener las proporciones */
+            display: block;
+            max-height: 200px;
+            margin-bottom: 20px;
+            text-align: center;
+
+        }
+
+        .about__img-onep {
+          
+            /* Ajusta el porcentaje según tu preferencia */
+            /* La altura se ajusta automáticamente para mantener las proporciones */
+            display: block;
+            max-height: 300px;
+            margin-bottom: 20px;
+            text-align: center;
+            margin: 0 auto;
+
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* Dos columnas iguales */
+            gap: 20px;
+            /* Espacio entre las columnas */
+        }
+
+        .por {
+            grid-column: span 2;
+            /* Ocupa dos columnas completas */
+        }
+
+        @media screen and (max-width: 600px) {
+            .two-column-container {
+                flex-direction: column;
+                /* Cambia la dirección de las columnas a vertical en dispositivos pequeños */
+            }
+
+            .text-column,
+            .image-column {
+                flex-basis: 100%;
+                /* Ocupa el 100% del ancho en dispositivos pequeños */
+            }
+        }
+
+        /* Espaciado entre la imagen y el texto en dispositivos más grandes */
+        @media screen and (min-width: 601px) {
+            .grid-container {
+                gap: 50px;
+                /* Ajusta el espacio entre la imagen y el texto según sea necesario */
+            }
+        }
+
+        /* Media query para dispositivos pequeños */
+        @media screen and (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                /* Una sola columna en dispositivos móviles */
+            }
+
+            .image-column {
+                order: 1;
+                /* Cambia el orden para que la imagen esté debajo del texto en dispositivos móviles */
+            }
+
+
+
+
+            .text-column {
+                order: 2;
+                /* Cambia el orden para que el texto esté encima de la imagen en dispositivos móviles */
+            }
+        }
+
+
+        @media screen and (min-width: 100px) and (max-width: 768px) {
+
+
+            .image-columns {
+                order: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+
+
+        /* Agrega estos estilos para centrar la imagen y limitar su ancho */
+        .image-container {
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 970px;
+            max-height: 250px;
+            /* Puedes ajustar este valor según sea necesario */
+            margin: 0 auto;
+            /* Esto centra la imagen horizontalmente */
+        }
+
+
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            /* Ajusta la altura según sea necesario */
+            background-image: url('assets/img/old.PNG');
+            /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            /* Color del texto */
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        .background-container,
+        .background-container-1,
+        .about__img-onep,
+        .ger {
+            transition: var(--img-transition);
+        }
+
+        .background-container:hover,
+        .background-container-1:hover,
+        .about__img-onep:hover,
+        .ger:hover {
+            transform: var(--img-scale);
+        }
+
+        .background-container-1 {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            /* Ajusta la altura según sea necesario */
+            background-image: url('assets/img/about2.jpg');
+            /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            /* Color del texto */
+            display: grid;
+            grid-template-columns: 50% 50%;
+
+        }
+
+        .text-container {
+            z-index: 1;
+            max-width: 80%;
+            /* Ajusta el ancho del texto según sea necesario */
+            grid-column: 2 / span 1;
+            /* Ocupa la primera columna en el grid */
+            align-self: center;
+            text-align: center;
+        }
+
+        .text-container-1 {
+            z-index: 1;
+            max-width: 80%;
+            /* Ajusta el ancho del texto según sea necesario */
+            grid-column: 1 / span 1;
+            /* Ocupa la primera columna en el grid */
+            align-self: center;
+            text-align: center;
+            margin-left: 70px;
+
+        }
+
+        .text-container,
+        .text-container-1 {
+            font-size: 16px;
+            /* Tamaño base */
+
+            /* Media query para pantallas de 200px hasta 400px */
+            @media screen and (min-width: 200px) and (max-width: 400px) {
+                font-size: 7px;
+                /* Tamaño para pantallas más pequeñas */
+
+                .por {
+                    font-size: 12px;
+                }
+
+            }
+
+            /* Media query para pantallas de 600px hasta 1438px */
+            @media screen and (min-width: 389px) and (max-width: 576px) {
+                font-size: 8px;
+
+                .por {
+                    font-size: 14px;
+                }
+
+            }
+
+            /* Media query para pantallas de 600px hasta 1438px */
+            @media screen and (min-width: 577px) and (max-width: 1438px) {
+                font-size: 10px;
+
+
+            }
+
+
+            @media screen and (min-width: 1000px) {
+                margin-left: 96px;
+                margin-right: 79px;
+                /* Agrega un margen izquierdo para pantallas medianas */
+            }
+
+
+
+
+
+        }
+
+
+
+        .discover__card  img{
+            height:300px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main class="main">
+
+        <h1 class=" fundamentos-title title">DISEÑO Y CREACIÓN DE ESCENARIOS ESTILIZADOS<br> </h1>
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about">
+
+
+
+            <div class="about__container container grid " style="gap: 50px;">
+                <div class=" about__data animated">
+
+                    <p class="about__description delaySmall">
+                        Cuando ya dispones de los bocetos y los conceptos visuales, es el momento de abordar la
+                        composición del escenario. Esto implica considerar aspectos como la perspectiva, la escala y la
+                        disposición de los elementos dentro del entorno. Además, debes prestar atención a la
+                        iluminación, incluyendo sombras y efectos de luz, para dotar al escenario de profundidad y
+                        realismo.
+                        <br><br>
+
+                        Para los fines prácticos de esta guía, hemos obtenido la autorización de la talentosa artista
+                        visual Keira Santoso, cuyo trabajo es una asombrosa manifestación en la creación de entornos
+                        para videojuegos. Con su generosa autorización, utilizaremos su obra 'The Iris Den' como un
+                        ejemplo práctico en esta guía. Este proyecto ofrece la oportunidad de explorar una diversidad de
+                        técnicas empleadas en la creación de escenarios estilizados, desde el boceto conceptual inicial
+                        hasta su implementación final en un videojuego.
+
+                    </p>
+
+                </div>
+
+                <div class="image-column delayMedium">
+                    <img src="assets/img/keira-santoso-clockwork-cafe-001.jpg" alt="" class="about__img-onea">
+                    <p class="about__description" style="text-align: center; text-decoration: underline;">
+                        <a href="https://www.artstation.com/artwork/DvlwG0" target="_blank">ArtStation - The Iris Den,
+                            Keira Santoso</a>
+                    </p>
+
+                </div>
+            </div>
+
+
+
+            <div class="about__container container delaySmallBottom ">
+                <div class="grid-container">
+
+
+
+                    <div>
+
+                        <div class="text-column delayMedium ">
+
+
+                            <p class="about__description" style="text-align:justify;">
+
+                            <h2 class="por ">Level blockout</h2>
+                            <p style="text-align:justify;"> El "blockout" es el siguiente paso concreto que te
+                                recomeindo en esta guia para la creación de tu escenario estilizado. Este paso consiste
+                                en la creación de una versión simplificada o esquemática del entorno. Durante esta fase,
+                                no te debes preocupar por los detalles visuales ni los activos específicos, sino que te
+                                centrararás en la estructura y la escala. Es decir, diseñaras un nivel 3D como borrador
+                                ya que este proceso te permitirá medir y ajustar la longitud, el ancho y la altura de tu
+                                escenario, asegurándote de que se ajuste a la visión del juego y que proporcione la
+                                experiencia deseada para los jugadores.</p>
+
+
+
+                            <br><br>
+
+
+                            </p>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="image-column  delaySmall"><br><br>
+                        <iframe width="100%" height="350px" src="https://www.youtube.com/embed/-_-SNug8VUA"
+                            frameborder="0" allowfullscreen class="about__img-onea"></iframe>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+        </section>
+
+
+
+
+        <!--==================== DISCOVER ====================-->
+     
+
+            <div class="discover__container container swiper-container  delaySmall">
+                <div class="swiper-wrapper">
+                    <!--==================== DISCOVER 1 ====================-->
+                    <div class="discover__card swiper-slide">
+                        <img src="assets/img/slide_1.jpg" alt="" class="discover__img">
+                        
+                    </div>
+
+                    <!--==================== DISCOVER 2 ====================-->
+                    <div class="discover__card swiper-slide">
+                        <img src="assets/img/slide_2.jpg" alt="" class="discover__img">
+                     
+                    </div>
+
+                    <!--==================== DISCOVER 3 ====================-->
+                    <div class="discover__card swiper-slide">
+                        <img src="assets/img/slide_3.png" alt="" class="discover__img">
+                     
+
+
+                    </div>
+
+                    
+                </div>
+            </div>
+     
+
+
+        <section class="about section delayLargeTopExtra"  id="about">
+            <div class="about__container container grid  " style="gap: 50px;">
+                <div class=" about__data animated">
+                    <p class="about__description">
+                        <br>
+                        El "blockout" es una parte crucial del diseño de escenarios, ya que establece una base sólida
+                        sobre
+                        la cual construirás los elementos visuales y de jugabilidad. A medida que avances en este
+                        proceso,
+                        estarás mejor preparado para abordar aspectos posteriores del diseño, como la creación de
+                        activos
+                        visuales, la integración de la narrativa y la jugabilidad.
+                        <br><br>
+
+                        Como esta guía se enfoca en la creación práctica de escenarios estilizados, no profundizaremos
+                        en
+                        temas específicos, como la creación de niveles. Sin embargo, es una práctica recomendable
+                        adquirir
+                        un entendimiento general del proceso de diseño de niveles en videojuegos. Te invito a investigar
+                        y
+                        aprender más sobre este tema para complementar tu conocimiento en la creación de escenarios
+                        estilizados.
+
+
+                    </p>
+
+                </div>
+
+
+                <div class="image-column animar">
+                    <iframe width="100%" height="350px" src="https://www.youtube.com/embed/W3eyNtBYBTk"
+                            frameborder="0" allowfullscreen class="about__img-onea"></iframe>
+
+                    
+                </div>
+            </div>
+
+
+
+
+        </section>
+        
+        <div class="about__container container grid   " style="gap: 50px;">
+            <div class="image-columns animar">
+                <br>
+                <img src="assets/img/3_ProxyPhase_Corregido.jpg" alt="" class="about__img-onep">
+
+            </div>
+            <div class=" about__data animated">
+                <p class="about__description">
+                <h2 class="por  animar">Proxy Phase</h2>
+
+
+                <p  class="delaySmall"style="text-align: justify; margin-bottom: 5%;  ">En esta etapa del desarrollo de escenarios
+                    estilizados, Te debes enfocar
+                    en la creación de las formas básicas del escenario, especialmente en lo que respecta a elementos
+                    modulares. Durante esta fase, trabajaras en la concepción de modelos proxy que servirán como
+                    representaciones simplificadas de los activos finales. Estos modelos proxy te permitirán evaluar
+                    y
+                    ajustar la disposición y la jugabilidad del escenario antes de avanzar en la creación de activos
+                    detallados.</p>
+                </p>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="about__container container grid  animar" style="gap: 50px;">
+            <div class="image-columns ">
+                <br>
+                <img src="assets/img/3_ProxyPhase_2.png" alt="" class="about__img-onep">
+
+            </div>
+            <div class=" about__data animated">
+                <p class="about__description">
+
+                    <br>
+                <p class="delaySmall" style="text-align: justify; margin-bottom: 10%;"> Es fundamental comprender que en esta etapa,
+                    estarás creando
+                    representaciones simplificadas de los elementos del escenario, caracterizadas por su menor nivel de
+                    detalle y menor cantidad de polígonos en comparación con las versiones finales. Estos modelos
+                    básicos se diseñan con la finalidad de facilitar la composición de la escena y permitirte evaluar la
+                    atmósfera y la dinámica que deseas transmitir en tu proyecto.<br><br>
+
+                    Estos modelos de baja resolución en la Proxy Phase se reemplazan gradualmente por activos de alta
+                    calidad.
+                </p>
+
+                </p>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="about__container container grid  " style="gap: 50px;">
+            <div class="image-columns animar ">
+                <br>
+                <img src="assets/img/3_ProxyPhase_3.png" alt="" class="about__img-onep">
+
+            </div>
+            <div class=" about__data animated    delaySmall">
+                <p class="about__description">
+
+                    <br>
+                <p style="text-align: justify; margin-bottom: 10%;"> La clave radica en la simplicidad y en la capacidad
+                    de identificar rápidamente los elementos que se repiten, lo que te proporcionará una base sólida
+                    para la escena. No es necesario que te preocupes en exceso por los detalles en esta etapa. En su
+                    lugar, enfócate en la creación de modelos de baja resolución que representen la forma general de los
+                    elementos que estarán presentes. Esto te brindará una comprensión más clara de la composición
+                    general de la escena.
+                </p>
+
+                </p>
+
+            </div>
+
+
+
+        </div>
+
+        <section class="about section" id="about">
+            <div class=" about__data container delaySmall">
+                <h2 class="por animar">Layout</h2>
+
+                <p class="about__description">
+                    En esta fase, estamos en el punto medio del proceso de creación de un escenario. Imagina que estamos
+                    decorando una habitación. Antes de empezar a poner cuadros en las paredes o detalles bonitos,
+                    primero necesitamos decidir dónde van los muebles, como estaran las sillas y las mesas. Eso es lo
+                    que hacemos en la fase de "Layout". No estamos ocupados con los detalles todavía, solo organizando
+                    los elementos principales.
+                    <br><br>
+
+                    Una vez que estemos contentos con la disposición de los muebles, avanzamos a la siguiente etapa. Es
+                    como cuando finalmente puedes empezar a decorar la habitación con cuadros, cortinas y cojines. En
+                    nuestro caso, eso significa agregar detalles visuales, texturas y efectos especiales al escenario.
+                    Esto hará que el lugar se vea hermoso y lleno de vida.
+
+                </p>
+
+
+                <div class="animar">
+                    <div class="image-container ">
+                        <iframe width="100%" height="350px" src="https://www.youtube.com/embed/zbV_nE9rIdA"
+                            frameborder="0" allowfullscreen class="about__img-onea"></iframe>
+
+                    </div>
+
+                    <p class="about__description">
+                        En este punto puedes llegar a pensar que la fase de "Level Blockout" y "Layout" son similares
+                        pero son dos etapas distintas en la creación de un escenario. la principal diferencia es que la
+                        etapa de Layout trataras la organización general de los elementos, mientras que el Level
+                        Blockout implica crear modelos básicos para evaluar la estructura del escenario antes de
+                        detallarlo visualmente. Ambos son importantes pasos en el proceso de diseño de escenarios, y
+                        cada uno tiene su propósito específico.
+                        <br><br>
+                    </p>
+
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let swiper = new Swiper(".discover__container", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                loop: true,
+                spaceBetween: 32,
+                coverflowEffect: {
+                    rotate: 0,
+                },
+            });
+        });
+
+        
+
+    </script>
+
+    
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup__icon"></i>
+    </a>
+    <!-- Agrega la etiqueta de script para la biblioteca ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Usa este script para inicializar ScrollReveal -->
+    <script>
+        ScrollReveal().reveal('.animar', {
+            origin: 'left',
+            distance: '50px',
+            duration: 2000,
+            delay: 550
+        });
+
+
+        const scrollTop = ScrollReveal({
+            origin: 'top',
+            distance: '50px',
+            duration: 1000
+        });
+
+        scrollTop.reveal('.delaySmall', { delay: 600 });
+        scrollTop.reveal('.delayMedium', { delay: 500 });
+        scrollTop.reveal('.delayLarge', { delay: 700 });
+        scrollTop.reveal('.delayLargeTopExtra', { delay: 900 });
+
+
+        const scrollBottom = ScrollReveal({
+            origin: 'bottom',
+            distance: '50px',
+            duration: 2300
+        })
+
+        scrollBottom.reveal('.delaySmallBottom', { delay: 300 })
+        scrollBottom.reveal('.delayMediumBottom', { delay: 500 })
+        scrollBottom.reveal('.delayLargeBottom', { delay: 700 })
+        scrollBottom.reveal('.delayLargeBottomExtra', { delay: 900 })
+
+
+        const scrollRight = ScrollReveal({
+            origin: 'left',
+            distance: '-20px',
+            duration: 2200
+        })
+
+        scrollRight.reveal('.title', { delay: 550 })
+
+
+
+
+
+    </script>
+
+
+    <script>
+        function scrollUp() {
+            const scrollUp = document.getElementById('scroll-up');
+            // When the scroll is higher than 200 viewport height, add the show-scroll class to the a tag with the scroll-top class
+            if (this.scrollY >= 200) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+        }
+        window.addEventListener('scroll', scrollUp)
+    </script>
+
+
+    <script src="assets/js/jQuery.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".slider-img").on("click", function () {
+                $(".slider-img").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "responsive-travel-website",
+  "version": "1.0.0",
+  "description": "- Travel website to the most beautiful beaches, using HTML, CSS & JAVASCRIPT.\r - Contains animations when scrolling.\r - Includes a dark and light mode.\r - Developed first with the Mobile First methodology, then for desktop.\r - Compatible with all mobile devices and with a beautiful and pleasant user interface.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
