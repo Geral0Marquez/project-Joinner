@@ -538,7 +538,8 @@ input {
 
 
 .bobo:hover{
-  background-color: #d5d5d5;
+  background-color: #0d0d0d;
+  color: #FFF;
 }
 
 .button:hover {
